@@ -97,6 +97,7 @@ require('services/routeService')(app,passport);
 
 // Error handler
 app.use(function(err, req, res, next) {
+    console.log("jdjhd");
     logger.error("Error: ", err);
     next(err);
 });
