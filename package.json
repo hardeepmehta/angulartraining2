@@ -1,7 +1,7 @@
 {
-  "name": "SampleProject",
+  "name": "TheChessaimShop",
   "version": "1.0.0",
-  "description": "Sample",
+  "description": "The complete chess platform",
   "main": "app.js",
   "dependencies": {
     "app-module-path": "^1.0.5",
