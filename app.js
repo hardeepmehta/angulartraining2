@@ -11,6 +11,7 @@ const bodyParser = require('body-parser'),
     serveStatic = require('serve-static'),
     expressSession = require('express-session');
 
+console.log('WELCOME JAYOTI!!');
 // Load environment variables
 require('dotenv').config({
     path: process.env.CONFIG_PATH || path.join(__dirname, '.env')
