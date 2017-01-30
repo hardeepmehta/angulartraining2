@@ -4,5 +4,5 @@ const apiService = require('services/apiService'),
 
 module.exports = function(app,passport) {
     require('controllers/authController')(app, passport);
-    require('controllers/helloController')(app, passport);
+    require('controllers/ramanController')(app, passport);
 };
