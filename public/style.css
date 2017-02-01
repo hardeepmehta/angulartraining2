@@ -13,10 +13,12 @@
     margin: 0 auto 15px;
 }
 a:focus { outline: 0px solid }
-img {
+
+img{
     max-width: 100%;
     height: auto;
 }
+
 .fix { overflow: hidden }
 h1,
 h2,
@@ -623,7 +625,7 @@ a:hover, a:focus {color: #17a78b}
 .footer-bottom-area {
   background: none repeat scroll 0 0 #000;
   color: #fff;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 
 
@@ -701,13 +703,13 @@ width: 10px;
 
 
 .sidebar-title {
-    color: #fead53;
-    font-size: 25px;
+    color: #ed4933;
+    font-size: 30px;
     margin-bottom: 30px;
     text-transform: uppercase;
 }
 .single-sidebar {
-    margin-bottom: 50px;
+    margin-bottom: 40%;
 }
 input[type="text"], input[type="password"], input[type="email"], textarea {
     border: 1px solid #ddd;
@@ -761,7 +763,7 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     display: block;
 }
 .product-breadcroumb {
-    margin-bottom: 20px;
+    margin-bottom: 5%;
 }
 .product-breadcroumb > a {
     margin-right: 31px;
