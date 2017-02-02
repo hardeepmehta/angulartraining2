@@ -13,15 +13,15 @@ module.exports = function( app, passport ) {
 };
 
 function myHandler(req, res, next) {
-    res.render('index');
+    res.render('index',{page:'home'});
 }
 
 function aboutHandler1(req, res, next) {
-    res.render('checkout');
+    res.render('checkout',{page:'checkout'});
 }
 
 function aboutHandler2(req, res, next) {
-    res.render('cart');
+    res.render('cart',{page:'cart'});
 }
 function aboutHandler3(req, res, next) {
     res.render('shop');
@@ -29,7 +29,7 @@ function aboutHandler3(req, res, next) {
 }
 
 function aboutHandler5(req, res, next) {
-    res.render('single-product');
+    res.render('single-product',{page:'single'});
 }
 
 function aboutHandler4(req, res, next) {
