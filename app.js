@@ -11,8 +11,6 @@ const bodyParser = require('body-parser'),
     serveStatic = require('serve-static'),
     expressSession = require('express-session');
 
-console.log('WELCOME JAYOTI!!');
-console.log('hi!');
 // Load environment variables
 require('dotenv').config({
     path: process.env.CONFIG_PATH || path.join(__dirname, '.env')
@@ -51,13 +49,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Middlewares
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'X-Requested-With');
-    res.header('Access-Control-Allow-Credentials', true);
-    next();
-})
+    app.use(function(req, res, next) {
+        res.header('Access-Control-Allow-Origin', 'localhost:8100');
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+        res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+        res.header('Access-Control-Allow-Credentials', true);
+        next();
+    })
     .use(bodyParser.urlencoded({
         limit: '20mb',
         extended: true
@@ -65,7 +63,7 @@ app.use(function(req, res, next) {
     .use(bodyParser.json({ limit: '100mb' }))
     .use(cookieParser())
     .use(expressSession({
-        secret: 'comely-guruji',
+        secret: 'troofal-interactive',
         resave: false,
         saveUninitialized: false
     }))
@@ -95,7 +93,7 @@ app.use(function(req, res, next) {
 });
 
 // Setup api routes
-require('services/routeService')(app,passport);
+require('services/routeService')(app);
 
 // Error handler
 app.use(function(err, req, res, next) {

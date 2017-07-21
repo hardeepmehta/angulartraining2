@@ -28,6 +28,7 @@
     "mime-types": "~2.1.10",
     "moment": "~2.11.2",
     "morgan": "~1.7.0",
+    "mysql": "^2.13.0",
     "node-promise": "~0.5.12",
     "nodemailer": "^0.7.1",
     "passport": "^0.3.2",
@@ -35,7 +36,7 @@
     "request": "~2.69.0",
     "response-time": "~2.3.1",
     "s3": "^4.4.0",
-    "sequelize": "~3.19.3",
+    "sequelize": "^3.19.3",
     "serve-static": "~1.10.2",
     "winston": "^2.2.0"
   },

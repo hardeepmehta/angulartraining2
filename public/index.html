@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Angular 101</title>
+    <script src="js/angular.js"></script>
+    <script src="js/ui-router.js"></script>
+    <script src="js/app.module.js"></script>
+    <script src="js/MYNEWHelloController.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/HelloController.js"></script>
+  </head>
+  <body>
+    <h1>Mohit nigga loves gaming Yo!</h1>
+    <div ng-controller="HelloController">
+        <div ui-view>
+          <div ng-show="loading">I AM LOADING NIGGA!</div>
+          <div ng-show="loaded">
+            <div ng-repeat="kamal in mohit">
+              <div style="border: 1px solid #000; padding: 50px; margin-top: 20px;" class="rapper">
+                <textarea>ID: {{kamal.id}}</textarea>
+                <textarea>{{kamal.title}}</textarea>
+                <textarea>{{kamal.description}}</textarea>
+                <textarea>{{kamal.duration}}</textarea>
+              </div>
+            </div>
+          </div>
+
+          <button ng-click="mohitClicked( $event )">CLICK ME NIGGA!</button>
+          <input type="text" ng-model="MYID" placeholder="Enter ID">
+          <button ng-click="mohitDelete( $event )">DELETE ME NIGGA!</button>
+        </div>
+
+        <a ui-sref="hello" ng-show="!$state.includes('hello')">Hello</a>
+        <a ui-sref="about" ui-sref-active="active">About</a>
+    </div>
+  </body>
+</html>

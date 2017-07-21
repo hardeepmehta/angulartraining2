@@ -1,26 +1,65 @@
 const apiService = require('services/apiService'),
-    apiConfig = require('config/apiConfig');
+    apiConfig = require('config/apiConfig'),
+    Sequelize = require('sequelize'),
+    util = require('util'),
+    path = require('path'),
+    sequelize = new Sequelize(process.env['MYSQL_DB'], process.env['MYSQL_USERNAME'], process.env['MYSQL_PASSWORD'], {
+      host: process.env['MYSQL_HOST'],
+      port: process.env['MYSQL_PORT'],
+      logging: true
+    }),
+    Course = sequelize.define('Course', {
+      title: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.STRING
+      },
+      duration: {
+        type: Sequelize.STRING
+      },
+      video: {
+        type: Sequelize.STRING
+      }
+    }, {
+      freezeTableName: true
+    });
 
-module.exports = function( app, passport ) {
-    // Login User
-    app.post('/api/login', passport.authenticate('local', {failureFlash: true} ), loginHandler);
+module.exports = function( app ) {
+  app.get('/mohit', function( req, res ) {
+    Course.findAll({
+      where: {
 
-    // Check if user is logged in
-    app.get('/api/loggedin', isLoggedInHandler);
+      }
+    })
+    .then(function( data ) {
+      res.send( data );
+    }, function( data ) {
+      res.send( data );
+    });
+  });
 
-    // Logout User
-    app.get('/api/logout', logoutHandler);
-};
+  app.post('/api/course', function( req, res ) {
+    res.send({
+      "id": 1000,
+      "title": "Mohit",
+      "description": "GAMING FREAK!!!!!",
+      "duration": "100",
+      "video": "mohit.mp4",
+      "createdAt": "0000-00-00",
+      "updatedAt": "0000-00-00"
+    });
+  });
 
-function loginHandler(req, res, next) {
-    res.send({user: req.user});
-}
-
-function isLoggedInHandler(req, res, next) {
-    res.send(req.isAuthenticated() ? req.user : '0');
-}
-
-function logoutHandler(req, res, next) {
-    req.logout();
-    res.redirect('/');
+  app.get('/api/video/:id', function( req, res ) {
+    res.send({
+      "id": req.params.id,
+      "title": "Mohit",
+      "description": "GAMING FREAK!!!!!",
+      "duration": "100",
+      "video": "mohit.mp4",
+      "createdAt": "0000-00-00",
+      "updatedAt": "0000-00-00"
+    });
+  });
 }
